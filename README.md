@@ -1,8 +1,10 @@
-JMA Strategy with ADX Filter (Buy Only)
-Overview
+
+# Overview
+
 This strategy combines the Jurik Moving Average (JMA), the Average Directional Index (ADX), Chaikin Money Flow (CMF), and a k-Nearest Neighbors (kNN) based prediction model to identify buy opportunities in the market. The strategy aims to filter and confirm buy signals by using multiple indicators and conditions.
 
-Inputs
+# Inputs
+
 JMA Length: Length of the Jurik Moving Average.
 JMA Phase: Phase of the JMA.
 JMA Power: Power of the JMA.
@@ -19,7 +21,8 @@ Long Period: Long period for kNN calculation.
 Base No. of Neighbours (K): Base number of neighbors for kNN calculation.
 Volatility Filter: Boolean to use a volatility filter.
 Bar Threshold: Threshold for the number of bars to consider.
-Calculation
+# Calculations
+
 Jurik Moving Average (JMA) Calculation:
 
 The JMA is calculated using the specified length, phase, and power parameters.
@@ -38,7 +41,7 @@ k-Nearest Neighbors (kNN) Based Prediction:
 
 The strategy uses kNN to predict market direction based on selected indicators (RSI, ROC, CCI, Volume, or a combination).
 The prediction is integrated with other indicators to confirm buy signals.
-Conditions for Buy Entry
+# Conditions for Buy Entry
 JMA Direction:
 The JMA is green (indicating an upward trend).
 ADX Value:
@@ -49,16 +52,16 @@ Length Condition:
 The previous candle's length is greater than 1.2 times the average candle length.
 kNN Long Prediction:
 The kNN-based prediction is positive.
-Conditions for Exit
+# Conditions for Exit
 JMA Direction:
 The JMA is red (indicating a downward trend).
 CMF Value:
 The CMF line is greater than 0.4.
-Strategy Logic
-Entry:
+# Strategy Logic
+## Entry:
+
 If all the conditions for a buy entry are met, the strategy enters a long position.
-Exit:
+## Exit:
+
 If any of the exit conditions are met, the strategy closes the long position.
-Plotting
-The JMA and ADX are plotted on the chart.
-The color of the JMA plot changes based on its direction to highlight movements.
+
